@@ -95,10 +95,17 @@ export default function OnePagerPage() {
             {site.rates.note}
           </p>
 
+          <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.12em] text-muted print:text-neutral-600">
+            Markets: {site.markets.join(" · ")}
+          </p>
+
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             <div className="border border-line p-4 print:border-neutral-300">
               <p className="font-mono text-[10px] uppercase tracking-wider text-dim print:text-neutral-500">
-                US / UK / EU
+                International (USD)
+              </p>
+              <p className="mt-1 text-[11px] text-muted print:text-neutral-500">
+                USA · UK · EU · UAE · GCC · SG · AU · CA
               </p>
               <p className="mt-1 text-lg font-semibold text-accent print:text-black">
                 {site.rates.hourlyIntl}
@@ -106,7 +113,10 @@ export default function OnePagerPage() {
             </div>
             <div className="border border-line p-4 print:border-neutral-300">
               <p className="font-mono text-[10px] uppercase tracking-wider text-dim print:text-neutral-500">
-                India / local agency
+                India / local agency (INR)
+              </p>
+              <p className="mt-1 text-[11px] text-muted print:text-neutral-500">
+                Startups · agencies · product teams
               </p>
               <p className="mt-1 text-lg font-semibold text-accent print:text-black">
                 {site.rates.hourlyIndia}

@@ -83,7 +83,7 @@ export function Hero() {
             className="mb-4 font-mono text-[11px] uppercase tracking-[0.18em] text-accent sm:mb-5 sm:text-xs sm:tracking-[0.2em]"
           >
             <span className="mr-2 inline-block size-1.5 rounded-full bg-accent align-middle shadow-[0_0_10px_var(--accent)]" />
-            Available for freelance · Remote US/EU & India
+            Available for freelance · {site.marketLineShort}
           </motion.p>
 
           <h1 className="text-[clamp(2.5rem,9vw,6.25rem)] font-extrabold leading-[0.92] tracking-[-0.05em] text-fg">
@@ -107,7 +107,7 @@ export function Hero() {
             className="mt-4 max-w-lg text-[15px] leading-relaxed text-muted sm:mt-5 sm:text-base"
           >
             5+ years. 15+ store apps. Health, fintech, hospitality, delivery —
-            for startups, agencies, and remote US/EU teams.
+            for startups & agencies in the USA, UK, EU, UAE, and beyond.
           </motion.p>
 
           <motion.div

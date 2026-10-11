@@ -58,7 +58,7 @@ export function Contact() {
         <SectionHeader
           index="// 05 · contact"
           title="Need a senior mobile engineer?"
-          hint="Startups · agencies · US/EU remote · India local"
+          hint={site.marketLine}
         />
         <Reveal>
           <div className="grid gap-10 border border-line bg-bg-panel/80 p-8 backdrop-blur-sm md:grid-cols-[1.15fr_0.85fr] md:gap-14 md:p-12">
@@ -68,8 +68,8 @@ export function Contact() {
                 architecture, payments, performance, or shipping.
               </p>
               <p className="mt-5 font-mono text-sm text-muted">
-                Free 15-min intro · WhatsApp for quick India/agency chats ·
-                reply usually within 24–48h.
+                Free intro call · WhatsApp great for UAE / India / agencies ·
+                IST timezone overlaps GCC well · reply in 24–48h.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">

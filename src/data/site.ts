@@ -2,17 +2,36 @@ export const site = {
   name: "Vishal Joshi",
   handle: "vj.mobile",
   role: "Senior Mobile Engineer",
-  location: "Ahmedabad, India · Remote US/EU",
+  location: "Ahmedabad, India · Remote worldwide",
   email: "vishaljoshi2215889@gmail.com",
   phoneE164: "919925991478",
   phoneDisplay: "+91 99259 91478",
   status: "open_to_freelance",
   availability: "Available for select freelance engagements",
+  /** High-intent freelance markets — IST overlaps well with UAE/GCC */
+  markets: [
+    "USA",
+    "UK",
+    "EU",
+    "UAE",
+    "Saudi",
+    "Singapore",
+    "Australia",
+    "Canada",
+    "India",
+  ],
+  marketLine:
+    "Remote · USA · UK · EU · UAE · GCC · Singapore · Australia · Canada · India",
+  /** Shorter line for hero badge */
+  marketLineShort: "USA · UK · EU · UAE · GCC · APAC · India",
   links: {
     linkedin: "https://linkedin.com/in/joshi-vishal",
     github: "https://github.com/vishaljoshi1720",
-    /** Create free Cal.com account → event "15-min intro" → match this URL */
-    booking: "https://cal.com/vishaljoshi/15min",
+    /**
+     * YOUR Cal.com — do NOT use cal.com/vishaljoshi (taken by someone else).
+     * Sign up free → username vishaljoshi1720 → event slug "intro"
+     */
+    booking: "https://cal.com/vishaljoshi1720/intro",
     whatsapp:
       "https://wa.me/919925991478?text=Hi%20Vishal%2C%20I%27d%20like%20to%20discuss%20a%20mobile%20project.",
     onePager: "/one-pager",
@@ -26,7 +45,7 @@ export const site = {
   },
   about: {
     lead: "I build cross-platform mobile products end-to-end — architecture, native bridges, payments, realtime, and App Store release.",
-    body: "Currently Senior Developer at Publicis Sapient on The Maybourne Society. Previously shipped 10+ production apps at Nimblechapps and founded delivery patterns that cut crash rates and sped onboarding. I work with startups, agencies, and remote US/EU teams who need a senior mobile owner — not just a ticket-taker.",
+    body: "Currently Senior Developer at Publicis Sapient on The Maybourne Society. Previously shipped 10+ production apps at Nimblechapps and founded delivery patterns that cut crash rates and sped onboarding. I work with startups, agencies, and remote teams across the US, UK, EU, UAE/GCC, and APAC who need a senior mobile owner — not just a ticket-taker.",
   },
   stats: [
     { label: "yrs shipping", value: "5+" },
@@ -43,11 +62,11 @@ export const site = {
     "CI/CD & store release",
   ],
   /**
-   * Market-positioned for US/UK + India.
+   * Dual currency: USD for international (incl. UAE/GCC), INR for India.
    * Prefer project quotes; hourly for short advisory / overflow.
    */
   rates: {
-    note: "Project quotes preferred. US/UK billed in USD. India/agency work available in INR.",
+    note: "Project quotes preferred. USA / UK / EU / UAE / GCC / Singapore / Australia / Canada billed in USD. India & local agencies in INR. WhatsApp-friendly for UAE & India.",
     hourlyIntl: "$65–85 / hr",
     hourlyIndia: "₹2,500–3,500 / hr",
     packages: [

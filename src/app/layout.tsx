@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s · Vishal Joshi",
   },
   description:
-    "Freelance React Native & Flutter engineer. 5+ years shipping production mobile apps for startups, agencies, and remote US/EU teams.",
+    "Freelance React Native & Flutter engineer. 5+ years shipping production mobile apps for startups and agencies — USA, UK, EU, UAE, APAC, and India.",
   applicationName: "Vishal Joshi Portfolio",
   authors: [{ name: "Vishal Joshi" }],
   creator: "Vishal Joshi",

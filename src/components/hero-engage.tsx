@@ -187,7 +187,7 @@ export function HeroEngage() {
           <dl className="mt-5 grid grid-cols-3 gap-2 border-t border-line pt-5">
             {[
               { k: "intro", v: "free" },
-              { k: "intl", v: "$65–85/h" },
+              { k: "usd mkts", v: "$65–85/h" },
               { k: "india", v: "₹2.5–3.5k/h" },
             ].map((item) => (
               <div key={item.k} className="min-w-0">
