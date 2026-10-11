@@ -125,7 +125,7 @@ export function Hero() {
               }
               className="btn-primary inline-flex min-h-12 items-center justify-center bg-accent px-6 py-3.5 text-center font-mono text-sm font-medium text-accent-ink transition hover:brightness-110"
             >
-              Book 15-min intro
+              Book intro call
             </a>
             <a
               href={`mailto:${site.email}?subject=Freelance%20mobile%20project`}
@@ -164,15 +164,17 @@ export function Hero() {
             >
               See live apps →
             </a>
-            <a
-              href={site.links.onePager}
-              onClick={() =>
-                trackEvent("cta_one_pager", { location: "hero_primary" })
-              }
-              className="link-underline hover:text-accent"
-            >
-              Rate card / PDF →
-            </a>
+            {site.showRates ? (
+              <a
+                href={site.links.onePager}
+                onClick={() =>
+                  trackEvent("cta_one_pager", { location: "hero_primary" })
+                }
+                className="link-underline hover:text-accent"
+              >
+                Rate card / PDF →
+              </a>
+            ) : null}
           </motion.div>
 
           <motion.ul

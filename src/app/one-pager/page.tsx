@@ -28,7 +28,9 @@ export default function OnePagerPage() {
       <article className="section-pad mx-auto max-w-3xl py-10 print:max-w-none print:px-8 print:py-6">
         <header className="border-b border-line pb-6 print:border-black/20">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent print:text-black">
-            Freelance rate card · 2026
+            {site.showRates
+              ? "Freelance rate card · 2026"
+              : "Freelance services · 2026"}
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
             {site.name}
@@ -89,61 +91,67 @@ export default function OnePagerPage() {
 
         <section className="mt-8">
           <h2 className="font-mono text-[11px] uppercase tracking-[0.16em] text-accent print:text-black">
-            Engagement & rates
+            Markets & next step
           </h2>
-          <p className="mt-3 text-sm text-muted print:text-neutral-600">
-            {site.rates.note}
-          </p>
-
           <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.12em] text-muted print:text-neutral-600">
-            Markets: {site.markets.join(" · ")}
+            {site.markets.join(" · ")}
+          </p>
+          <p className="mt-3 text-sm text-muted print:text-neutral-600">
+            Free intro call to discuss scope and fit. Project quotes shared after
+            we understand the brief — no public price list.
           </p>
 
-          <div className="mt-4 grid gap-3 sm:grid-cols-2">
-            <div className="border border-line p-4 print:border-neutral-300">
-              <p className="font-mono text-[10px] uppercase tracking-wider text-dim print:text-neutral-500">
-                International (USD)
+          {site.showRates ? (
+            <>
+              <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.16em] text-accent print:text-black">
+                Engagement & rates
               </p>
-              <p className="mt-1 text-[11px] text-muted print:text-neutral-500">
-                USA · UK · EU · UAE · GCC · SG · AU · CA
+              <p className="mt-3 text-sm text-muted print:text-neutral-600">
+                {site.rates.note}
               </p>
-              <p className="mt-1 text-lg font-semibold text-accent print:text-black">
-                {site.rates.hourlyIntl}
-              </p>
-            </div>
-            <div className="border border-line p-4 print:border-neutral-300">
-              <p className="font-mono text-[10px] uppercase tracking-wider text-dim print:text-neutral-500">
-                India / local agency (INR)
-              </p>
-              <p className="mt-1 text-[11px] text-muted print:text-neutral-500">
-                Startups · agencies · product teams
-              </p>
-              <p className="mt-1 text-lg font-semibold text-accent print:text-black">
-                {site.rates.hourlyIndia}
-              </p>
-            </div>
-          </div>
-
-          <ul className="mt-4 space-y-3">
-            {site.rates.packages.map((pkg) => (
-              <li
-                key={pkg.name}
-                className="border border-line p-4 print:border-neutral-300"
-              >
-                <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <p className="font-semibold">{pkg.name}</p>
-                  <p className="font-mono text-xs text-accent print:text-black">
-                    {pkg.priceIntl}
-                    <span className="text-dim print:text-neutral-500"> · </span>
-                    {pkg.priceIndia}
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                <div className="border border-line p-4 print:border-neutral-300">
+                  <p className="font-mono text-[10px] uppercase tracking-wider text-dim print:text-neutral-500">
+                    International (USD)
+                  </p>
+                  <p className="mt-1 text-lg font-semibold text-accent print:text-black">
+                    {site.rates.hourlyIntl}
                   </p>
                 </div>
-                <p className="mt-1 text-sm text-muted print:text-neutral-600">
-                  {pkg.detail}
-                </p>
-              </li>
-            ))}
-          </ul>
+                <div className="border border-line p-4 print:border-neutral-300">
+                  <p className="font-mono text-[10px] uppercase tracking-wider text-dim print:text-neutral-500">
+                    India / local agency (INR)
+                  </p>
+                  <p className="mt-1 text-lg font-semibold text-accent print:text-black">
+                    {site.rates.hourlyIndia}
+                  </p>
+                </div>
+              </div>
+              <ul className="mt-4 space-y-3">
+                {site.rates.packages.map((pkg) => (
+                  <li
+                    key={pkg.name}
+                    className="border border-line p-4 print:border-neutral-300"
+                  >
+                    <div className="flex flex-wrap items-baseline justify-between gap-2">
+                      <p className="font-semibold">{pkg.name}</p>
+                      <p className="font-mono text-xs text-accent print:text-black">
+                        {pkg.priceIntl}
+                        <span className="text-dim print:text-neutral-500">
+                          {" "}
+                          ·{" "}
+                        </span>
+                        {pkg.priceIndia}
+                      </p>
+                    </div>
+                    <p className="mt-1 text-sm text-muted print:text-neutral-600">
+                      {pkg.detail}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : null}
         </section>
 
         <footer className="mt-10 border-t border-line pt-6 font-mono text-xs text-muted print:border-neutral-300 print:text-neutral-600">

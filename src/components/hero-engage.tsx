@@ -145,7 +145,7 @@ export function HeroEngage() {
             }
             className="btn-primary mt-7 flex min-h-12 w-full items-center justify-center bg-accent px-5 py-3.5 text-center font-mono text-sm font-medium text-accent-ink transition hover:brightness-110"
           >
-            Book free 15-min intro →
+            Book free intro call →
           </a>
 
           <div className="mt-4 grid grid-cols-2 gap-2">
@@ -174,22 +174,31 @@ export function HeroEngage() {
             </a>
           </div>
 
-          <a
-            href={site.links.onePager}
-            onClick={() =>
-              trackEvent("cta_one_pager", { location: "hero_engage" })
-            }
-            className="mt-4 flex min-h-10 items-center justify-center font-mono text-[11px] text-muted transition hover:text-accent"
-          >
-            Download rate card (PDF) →
-          </a>
+          {site.showRates ? (
+            <a
+              href={site.links.onePager}
+              onClick={() =>
+                trackEvent("cta_one_pager", { location: "hero_engage" })
+              }
+              className="mt-4 flex min-h-10 items-center justify-center font-mono text-[11px] text-muted transition hover:text-accent"
+            >
+              Download rate card (PDF) →
+            </a>
+          ) : null}
 
           <dl className="mt-5 grid grid-cols-3 gap-2 border-t border-line pt-5">
-            {[
-              { k: "intro", v: "free" },
-              { k: "usd mkts", v: "$65–85/h" },
-              { k: "india", v: "₹2.5–3.5k/h" },
-            ].map((item) => (
+            {(site.showRates
+              ? [
+                  { k: "intro", v: "free" },
+                  { k: "usd mkts", v: "$65–85/h" },
+                  { k: "india", v: "₹2.5–3.5k/h" },
+                ]
+              : [
+                  { k: "reply", v: "24–48h" },
+                  { k: "apps live", v: "15+" },
+                  { k: "markets", v: "global" },
+                ]
+            ).map((item) => (
               <div key={item.k} className="min-w-0">
                 <dt className="font-mono text-[9px] uppercase tracking-[0.12em] text-muted">
                   {item.k}

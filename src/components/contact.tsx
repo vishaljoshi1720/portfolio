@@ -25,12 +25,6 @@ const channels = [
     key: "email",
   },
   {
-    label: "rate card",
-    href: site.links.onePager,
-    external: false,
-    key: "one_pager",
-  },
-  {
     label: "linkedin",
     href: site.links.linkedin,
     external: true,
@@ -84,7 +78,7 @@ export function Contact() {
                   whileTap={{ scale: 0.98 }}
                   className="btn-primary inline-flex min-h-12 items-center justify-center bg-accent px-6 py-3.5 font-mono text-sm font-medium text-accent-ink"
                 >
-                  Book 15-min intro
+                  Book intro call
                 </motion.a>
                 <a
                   href={site.links.whatsapp}

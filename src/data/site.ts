@@ -27,15 +27,14 @@ export const site = {
   links: {
     linkedin: "https://linkedin.com/in/joshi-vishal",
     github: "https://github.com/vishaljoshi1720",
-    /**
-     * YOUR Cal.com — do NOT use cal.com/vishaljoshi (taken by someone else).
-     * Sign up free → username vishaljoshi1720 → event slug "intro"
-     */
-    booking: "https://cal.com/vishaljoshi1720/intro",
+    /** https://cal.com/vishal-joshi */
+    booking: "https://cal.com/vishal-joshi",
     whatsapp:
       "https://wa.me/919925991478?text=Hi%20Vishal%2C%20I%27d%20like%20to%20discuss%20a%20mobile%20project.",
     onePager: "/one-pager",
   },
+  /** Keep rates in code; set true to show pricing on site again */
+  showRates: false,
   hero: {
     brand: "Vishal Joshi",
     headline:
