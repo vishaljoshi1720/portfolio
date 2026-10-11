@@ -100,12 +100,24 @@ export const site = {
 export const projects = [
   {
     id: "01",
+    slug: "fitness-chef",
     title: "The Fitness Chef",
     stack: ["React Native", "Stripe", "RevenueCat", "HealthKit", "Fitbit"],
     domain: "Health",
+    role: "Senior React Native Developer",
+    challenge:
+      "Ship a subscription fitness product that syncs health data reliably and converts free users into paying subscribers without tanking store ratings.",
+    approach:
+      "Owned mobile delivery for nutrition/workout plans, HealthKit & Fitbit sync, Stripe + RevenueCat entitlements, and production monitoring with Sentry.",
     summary:
       "Subscription nutrition & workout plans with fitness API sync and progress tracking for a large active user base.",
-    outcome: "50K+ active users · ~25% subscription conversion lift",
+    outcome: "50K+ active users · ~25% subscription conversion lift · live on App Store & Play",
+    screenshots: [
+      "/images/projects/fitness-chef/1.jpg",
+      "/images/projects/fitness-chef/2.jpg",
+      "/images/projects/fitness-chef/3.jpg",
+      "/images/projects/fitness-chef/4.jpg",
+    ],
     links: {
       android:
         "https://play.google.com/store/apps/details?id=com.thefitnesschef.app&hl=en_IN&pli=1",
@@ -114,12 +126,24 @@ export const projects = [
   },
   {
     id: "02",
+    slug: "remedo",
     title: "Remedo Doctor",
     stack: ["React Native", "Video", "Mixpanel", "WebEngage"],
     domain: "Healthcare",
+    role: "React Native Developer",
+    challenge:
+      "Give doctors a stable mobile workflow for availability, appointments, and chat/video consults — with engagement analytics that actually get used.",
+    approach:
+      "Built consult and scheduling flows, video sessions, and Mixpanel/WebEngage funnels so product could see where doctors dropped off.",
     summary:
       "Doctor platform for availability, appointments, and chat/video consults with analytics-driven engagement.",
-    outcome: "Video consults · analytics funnels · Google Business API",
+    outcome: "Video consults in production · analytics-driven engagement · live on both stores",
+    screenshots: [
+      "/images/projects/remedo/1.jpg",
+      "/images/projects/remedo/2.jpg",
+      "/images/projects/remedo/3.jpg",
+      "/images/projects/remedo/4.jpg",
+    ],
     links: {
       android:
         "https://play.google.com/store/apps/details?id=com.remedoapp.doctor&hl=en_IN&gl=US",
@@ -128,12 +152,24 @@ export const projects = [
   },
   {
     id: "03",
+    slug: "safer-walking",
     title: "SaferWalking",
     stack: ["React Native", "Maps", "Location", "Push Notifications"],
     domain: "Safety",
+    role: "React Native Developer",
+    challenge:
+      "Deliver a cross-platform safety app where live location and alerts have to feel instant — and still pass store review.",
+    approach:
+      "Implemented location-aware walks, map UX, and push-driven alerts with a focus on reliability and clear emergency-adjacent flows.",
     summary:
       "Cross-platform walking safety app with live location awareness and practical on-the-go protection flows for everyday users.",
-    outcome: "Live on App Store & Play Store",
+    outcome: "Shipped to App Store & Play Store · realtime location UX in production",
+    screenshots: [
+      "/images/projects/safer-walking/1.jpg",
+      "/images/projects/safer-walking/2.jpg",
+      "/images/projects/safer-walking/3.jpg",
+      "/images/projects/safer-walking/4.jpg",
+    ],
     links: {
       android:
         "https://play.google.com/store/apps/details?id=com.saferwalkingmobile",
@@ -142,16 +178,28 @@ export const projects = [
   },
   {
     id: "04",
+    slug: "deardoc",
     title: "DearDoc",
     stack: ["React Native", "Video", "Appointments", "Analytics"],
     domain: "Healthcare",
+    role: "React Native Developer",
+    challenge:
+      "Help doctors run day-to-day practice from mobile — appointments and consults — without a clunky clinic-only web tool.",
+    approach:
+      "Delivered doctor-facing appointment and consultation flows on a shared React Native codebase for iOS and Android.",
     summary:
       "Doctor-facing app for managing practice workflows, appointments, and patient consultations on iOS and Android.",
-    outcome: "Live on App Store & Play Store",
+    outcome: "Live practice workflows on App Store & Play Store",
+    screenshots: [
+      "/images/projects/deardoc/1.jpg",
+      "/images/projects/deardoc/2.jpg",
+      "/images/projects/deardoc/3.jpg",
+      "/images/projects/deardoc/4.jpg",
+    ],
     links: {
       android:
         "https://play.google.com/store/apps/details?id=com.deardoc.doctor&hl=en_IN&gl=US",
-      ios: "https://apps.apple.com/in/app/deardoc-for-doctor/id1566119148",
+      ios: "https://apps.apple.com/in/app/deardoc/id1517629173",
     },
   },
 ] as const;
