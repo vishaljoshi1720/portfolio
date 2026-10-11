@@ -5,9 +5,51 @@ import { site } from "@/data/site";
 import { Reveal, SectionHeader } from "@/components/reveal";
 import { trackEvent } from "@/lib/track";
 
+const channels = [
+  {
+    label: "book intro",
+    href: site.links.booking,
+    external: true,
+    key: "book",
+  },
+  {
+    label: "whatsapp",
+    href: site.links.whatsapp,
+    external: true,
+    key: "whatsapp",
+  },
+  {
+    label: "email",
+    href: `mailto:${site.email}?subject=Freelance%20mobile%20project`,
+    external: false,
+    key: "email",
+  },
+  {
+    label: "rate card",
+    href: site.links.onePager,
+    external: false,
+    key: "one_pager",
+  },
+  {
+    label: "linkedin",
+    href: site.links.linkedin,
+    external: true,
+    key: "linkedin",
+  },
+  {
+    label: "github",
+    href: site.links.github,
+    external: true,
+    key: "github",
+  },
+] as const;
+
 export function Contact() {
   return (
-    <section id="contact" className="section-pad relative overflow-hidden border-t border-line py-16 sm:py-24 md:py-32">
+    <section
+      id="contact"
+      className="section-pad relative overflow-hidden border-t border-line py-16 sm:py-24 md:py-32"
+    >
       <div
         aria-hidden
         className="pointer-events-none absolute -right-20 top-10 h-80 w-80 rounded-full bg-accent/10 blur-3xl"
@@ -22,38 +64,64 @@ export function Contact() {
           <div className="grid gap-10 border border-line bg-bg-panel/80 p-8 backdrop-blur-sm md:grid-cols-[1.15fr_0.85fr] md:gap-14 md:p-12">
             <div>
               <p className="max-w-xl text-2xl leading-snug tracking-tight md:text-[2rem]">
-                Tell me about the app, timeline, and where it hurts — architecture,
-                payments, performance, or shipping.
+                Tell me about the app, timeline, and where it hurts —
+                architecture, payments, performance, or shipping.
               </p>
               <p className="mt-5 font-mono text-sm text-muted">
-                Prefer email. Response usually within 24–48h.
+                Free 15-min intro · WhatsApp for quick India/agency chats ·
+                reply usually within 24–48h.
               </p>
-              <motion.a
-                href={`mailto:${site.email}?subject=Freelance%20mobile%20project`}
-                onClick={() =>
-                  trackEvent("cta_hire", { location: "contact", type: "email" })
-                }
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="btn-primary mt-9 inline-flex min-h-12 items-center bg-accent px-6 py-3.5 font-mono text-sm font-medium text-accent-ink"
-              >
-                {site.email}
-              </motion.a>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <motion.a
+                  href={site.links.booking}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() =>
+                    trackEvent("cta_book", { location: "contact" })
+                  }
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="btn-primary inline-flex min-h-12 items-center justify-center bg-accent px-6 py-3.5 font-mono text-sm font-medium text-accent-ink"
+                >
+                  Book 15-min intro
+                </motion.a>
+                <a
+                  href={site.links.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() =>
+                    trackEvent("cta_whatsapp", { location: "contact" })
+                  }
+                  className="inline-flex min-h-12 items-center justify-center border border-line-strong px-6 py-3.5 font-mono text-sm text-fg transition hover:border-accent hover:text-accent"
+                >
+                  WhatsApp
+                </a>
+                <a
+                  href={`mailto:${site.email}?subject=Freelance%20mobile%20project`}
+                  onClick={() =>
+                    trackEvent("cta_hire", {
+                      location: "contact",
+                      type: "email",
+                    })
+                  }
+                  className="inline-flex min-h-12 items-center justify-center border border-line-strong px-6 py-3.5 font-mono text-sm text-fg transition hover:border-accent hover:text-accent"
+                >
+                  Email
+                </a>
+              </div>
+
+              <p className="mt-4 font-mono text-xs text-dim">
+                {site.phoneDisplay} · {site.email}
+              </p>
             </div>
+
             <div className="font-mono text-sm">
               <p className="text-xs uppercase tracking-[0.18em] text-accent">
                 ./channels
               </p>
               <ul className="mt-5 space-y-1 text-muted">
-                {[
-                  { label: "email", href: `mailto:${site.email}`, external: false },
-                  {
-                    label: "linkedin",
-                    href: site.links.linkedin,
-                    external: true,
-                  },
-                  { label: "github", href: site.links.github, external: true },
-                ].map((row) => (
+                {channels.map((row) => (
                   <li key={row.label}>
                     <a
                       href={row.href}
@@ -62,7 +130,7 @@ export function Contact() {
                       onClick={() =>
                         trackEvent("cta_channel", {
                           location: "contact",
-                          channel: row.label,
+                          channel: row.key,
                         })
                       }
                       className="group flex min-h-12 items-center justify-between gap-4 border-b border-line py-3.5 transition-colors hover:text-accent"

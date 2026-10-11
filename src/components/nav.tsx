@@ -85,10 +85,12 @@ export function Nav() {
 
         <div className="flex items-center gap-2 sm:gap-3">
           <a
-            href="#contact"
+            href={site.links.booking}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden min-h-11 items-center font-mono text-xs uppercase tracking-[0.14em] text-accent transition-opacity hover:opacity-80 sm:inline-flex"
           >
-            hire_me →
+            book_intro →
           </a>
           <button
             type="button"

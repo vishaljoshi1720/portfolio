@@ -205,6 +205,23 @@ body.menu-open {
   overflow: hidden;
 }
 
+@media print {
+  .site-shell::before,
+  .skip-link {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

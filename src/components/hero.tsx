@@ -117,30 +117,69 @@ export function Hero() {
             className="mt-8 flex w-full flex-col gap-3 sm:mt-9 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center"
           >
             <a
+              href={site.links.booking}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent("cta_book", { location: "hero_primary" })
+              }
+              className="btn-primary inline-flex min-h-12 items-center justify-center bg-accent px-6 py-3.5 text-center font-mono text-sm font-medium text-accent-ink transition hover:brightness-110"
+            >
+              Book 15-min intro
+            </a>
+            <a
               href={`mailto:${site.email}?subject=Freelance%20mobile%20project`}
               onClick={() =>
                 trackEvent("cta_hire", { location: "hero_primary", type: "email" })
               }
-              className="btn-primary inline-flex min-h-12 items-center justify-center bg-accent px-6 py-3.5 text-center font-mono text-sm font-medium text-accent-ink transition hover:brightness-110"
+              className="inline-flex min-h-12 items-center justify-center border border-line-strong px-6 py-3.5 text-center font-mono text-sm text-fg transition hover:border-accent hover:text-accent"
             >
-              Hire me for a project
+              Email
             </a>
+            <a
+              href={site.links.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent("cta_whatsapp", { location: "hero_primary" })
+              }
+              className="inline-flex min-h-12 items-center justify-center border border-line-strong px-6 py-3.5 text-center font-mono text-sm text-fg transition hover:border-accent hover:text-accent"
+            >
+              WhatsApp
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={reduce ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: reduce ? 0 : 0.65, duration: 0.45 }}
+            className="mt-4 flex flex-wrap gap-x-4 gap-y-2 font-mono text-[11px] text-muted"
+          >
             <a
               href="#work"
               onClick={() =>
                 trackEvent("cta_work", { location: "hero_primary" })
               }
-              className="inline-flex min-h-12 items-center justify-center border border-line-strong px-6 py-3.5 text-center font-mono text-sm text-fg transition hover:border-accent hover:text-accent"
+              className="link-underline hover:text-accent"
             >
-              See live apps
+              See live apps →
+            </a>
+            <a
+              href={site.links.onePager}
+              onClick={() =>
+                trackEvent("cta_one_pager", { location: "hero_primary" })
+              }
+              className="link-underline hover:text-accent"
+            >
+              Rate card / PDF →
             </a>
           </motion.div>
 
           <motion.ul
             initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: reduce ? 0 : 0.7, duration: 0.45 }}
-            className="mt-10 flex flex-wrap gap-x-4 gap-y-2 border-t border-line pt-5 font-mono text-[10px] uppercase tracking-[0.12em] text-muted sm:mt-12 sm:gap-x-5 sm:pt-6 sm:text-[11px] sm:tracking-[0.14em]"
+            transition={{ delay: reduce ? 0 : 0.75, duration: 0.45 }}
+            className="mt-8 flex flex-wrap gap-x-4 gap-y-2 border-t border-line pt-5 font-mono text-[10px] uppercase tracking-[0.12em] text-muted sm:mt-10 sm:gap-x-5 sm:pt-6 sm:text-[11px] sm:tracking-[0.14em]"
           >
             {domains.map((d) => (
               <li key={d} className="flex items-center gap-2">

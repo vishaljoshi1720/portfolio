@@ -27,8 +27,8 @@ const outcomes = [
 ];
 
 const steps = [
-  { n: "01", label: "You send the brief" },
-  { n: "02", label: "I scope & reply fast" },
+  { n: "01", label: "Book a free intro" },
+  { n: "02", label: "I scope & quote" },
   { n: "03", label: "We ship together" },
 ];
 
@@ -45,7 +45,6 @@ export function HeroEngage() {
   }, [reduce]);
 
   const active = outcomes[index];
-  const mailHref = `mailto:${site.email}?subject=Freelance%20mobile%20project&body=Hi%20Vishal%2C%0A%0AProject%3A%0ATimeline%3A%0APlatform%20(iOS%2FAndroid%2Fboth)%3A%0A%0A`;
 
   return (
     <motion.aside
@@ -55,7 +54,6 @@ export function HeroEngage() {
       className="relative w-full max-w-md lg:justify-self-end"
       aria-label="Hire me"
     >
-      {/* Atmosphere — not a heavy card */}
       <div
         aria-hidden
         className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-[radial-gradient(ellipse_at_70%_20%,rgba(200,245,66,0.12),transparent_55%)]"
@@ -87,7 +85,7 @@ export function HeroEngage() {
 
           <p className="mt-5 text-sm leading-relaxed text-muted">
             Looking for a freelance mobile engineer who already ships for real
-            users? Start here.
+            users? Start with a free intro call.
           </p>
 
           <div className="mt-6 min-h-[7.5rem] border-y border-line py-5">
@@ -112,9 +110,9 @@ export function HeroEngage() {
               </motion.div>
             </AnimatePresence>
             <div className="mt-4 flex gap-1.5" aria-hidden>
-              {outcomes.map((_, i) => (
+              {outcomes.map((outcome, i) => (
                 <span
-                  key={outcomes[i].title}
+                  key={outcome.title}
                   className={`h-0.5 flex-1 transition-colors duration-300 ${
                     i === index ? "bg-accent" : "bg-line-strong"
                   }`}
@@ -139,49 +137,64 @@ export function HeroEngage() {
           </ol>
 
           <a
-            href={mailHref}
+            href={site.links.booking}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() =>
-              trackEvent("cta_hire", { location: "hero_engage", type: "email" })
+              trackEvent("cta_book", { location: "hero_engage" })
             }
             className="btn-primary mt-7 flex min-h-12 w-full items-center justify-center bg-accent px-5 py-3.5 text-center font-mono text-sm font-medium text-accent-ink transition hover:brightness-110"
           >
-            Email your project brief →
+            Book free 15-min intro →
           </a>
 
           <div className="mt-4 grid grid-cols-2 gap-2">
             <a
-              href="#work"
-              onClick={() =>
-                trackEvent("cta_work", { location: "hero_engage" })
-              }
-              className="inline-flex min-h-11 items-center justify-center border border-line-strong px-3 py-2.5 text-center font-mono text-[11px] uppercase tracking-[0.12em] text-fg transition hover:border-accent hover:text-accent"
-            >
-              Live apps
-            </a>
-            <a
-              href={site.links.linkedin}
+              href={site.links.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() =>
-                trackEvent("cta_linkedin", { location: "hero_engage" })
+                trackEvent("cta_whatsapp", { location: "hero_engage" })
               }
               className="inline-flex min-h-11 items-center justify-center border border-line-strong px-3 py-2.5 text-center font-mono text-[11px] uppercase tracking-[0.12em] text-fg transition hover:border-accent hover:text-accent"
             >
-              LinkedIn
+              WhatsApp
+            </a>
+            <a
+              href={`mailto:${site.email}?subject=Freelance%20mobile%20project`}
+              onClick={() =>
+                trackEvent("cta_hire", {
+                  location: "hero_engage",
+                  type: "email",
+                })
+              }
+              className="inline-flex min-h-11 items-center justify-center border border-line-strong px-3 py-2.5 text-center font-mono text-[11px] uppercase tracking-[0.12em] text-fg transition hover:border-accent hover:text-accent"
+            >
+              Email
             </a>
           </div>
 
-          <dl className="mt-7 grid grid-cols-3 gap-2 border-t border-line pt-5">
+          <a
+            href={site.links.onePager}
+            onClick={() =>
+              trackEvent("cta_one_pager", { location: "hero_engage" })
+            }
+            className="mt-4 flex min-h-10 items-center justify-center font-mono text-[11px] text-muted transition hover:text-accent"
+          >
+            Download rate card (PDF) →
+          </a>
+
+          <dl className="mt-5 grid grid-cols-3 gap-2 border-t border-line pt-5">
             {[
-              { k: "reply", v: "24–48h" },
-              { k: "apps live", v: "15+" },
-              { k: "focus", v: "mobile" },
+              { k: "intro", v: "free" },
+              { k: "intl", v: "$65–85/h" },
+              { k: "india", v: "₹2.5–3.5k/h" },
             ].map((item) => (
               <div key={item.k} className="min-w-0">
                 <dt className="font-mono text-[9px] uppercase tracking-[0.12em] text-muted">
                   {item.k}
                 </dt>
-                <dd className="mt-1 font-mono text-sm font-semibold text-accent sm:text-base">
+                <dd className="mt-1 font-mono text-xs font-semibold text-accent sm:text-sm">
                   {item.v}
                 </dd>
               </div>

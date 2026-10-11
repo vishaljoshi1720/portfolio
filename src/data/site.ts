@@ -4,11 +4,18 @@ export const site = {
   role: "Senior Mobile Engineer",
   location: "Ahmedabad, India · Remote US/EU",
   email: "vishaljoshi2215889@gmail.com",
+  phoneE164: "919925991478",
+  phoneDisplay: "+91 99259 91478",
   status: "open_to_freelance",
   availability: "Available for select freelance engagements",
   links: {
     linkedin: "https://linkedin.com/in/joshi-vishal",
     github: "https://github.com/vishaljoshi1720",
+    /** Create free Cal.com account → event "15-min intro" → match this URL */
+    booking: "https://cal.com/vishaljoshi/15min",
+    whatsapp:
+      "https://wa.me/919925991478?text=Hi%20Vishal%2C%20I%27d%20like%20to%20discuss%20a%20mobile%20project.",
+    onePager: "/one-pager",
   },
   hero: {
     brand: "Vishal Joshi",
@@ -35,6 +42,41 @@ export const site = {
     "Monorepo / modular architecture",
     "CI/CD & store release",
   ],
+  /**
+   * Market-positioned for US/UK + India.
+   * Prefer project quotes; hourly for short advisory / overflow.
+   */
+  rates: {
+    note: "Project quotes preferred. US/UK billed in USD. India/agency work available in INR.",
+    hourlyIntl: "$65–85 / hr",
+    hourlyIndia: "₹2,500–3,500 / hr",
+    packages: [
+      {
+        name: "15-min intro",
+        priceIntl: "Free",
+        priceIndia: "Free",
+        detail: "Fit check — goals, timeline, whether I’m the right hire.",
+      },
+      {
+        name: "Mobile audit",
+        priceIntl: "from $1,500",
+        priceIndia: "from ₹1.25L",
+        detail: "3–5 days: crash/perf/release review + prioritized fix plan.",
+      },
+      {
+        name: "Feature sprint",
+        priceIntl: "from $4,000",
+        priceIndia: "from ₹3.5L",
+        detail: "2–4 weeks owned delivery — architecture, build, store-ready.",
+      },
+      {
+        name: "Fractional lead",
+        priceIntl: "from $3,000 / mo",
+        priceIndia: "from ₹2.5L / mo",
+        detail: "Part-time senior ownership — reviews, shipping, unblocking.",
+      },
+    ],
+  },
 } as const;
 
 export const projects = [
