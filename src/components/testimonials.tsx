@@ -13,7 +13,7 @@ export function Testimonials() {
         <SectionHeader
           index="// 05 · client_notes"
           title="What collaborators say."
-          hint="From people I've shipped with — region + relationship tagged."
+          hint="From people I've shipped with."
         />
         <div className="grid gap-px border border-line bg-line md:grid-cols-2">
           {testimonials.map((item, i) => (

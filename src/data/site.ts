@@ -137,9 +137,9 @@ export const projects = [
         src: "/images/projects/fitness-chef/1.jpg",
         label: "Calories & macros",
       },
-      { src: "/images/projects/fitness-chef/2.jpg", label: "Workout tracking" },
-      { src: "/images/projects/fitness-chef/3.jpg", label: "Meal planning" },
-      { src: "/images/projects/fitness-chef/4.jpg", label: "Progress & sync" },
+      { src: "/images/projects/fitness-chef/2.jpg", label: "Weight progress" },
+      { src: "/images/projects/fitness-chef/3.jpg", label: "AI food logging" },
+      { src: "/images/projects/fitness-chef/4.jpg", label: "High-protein recipes" },
     ],
     links: {
       android:
@@ -160,13 +160,13 @@ export const projects = [
     challenge:
       "Give doctors a stable mobile workflow for consults — with engagement analytics teams actually use.",
     approach:
-      "Built scheduling, video sessions, and Mixpanel/WebEngage funnels to surface drop-off in the consult flow.",
-    metrics: ["Video consults live", "Analytics funnels", "Dual-store release"],
+      "Built appointments, patient profiles, Google Insights, video/clinic consult flows, and Mixpanel/WebEngage funnels.",
+    metrics: ["Video consults live", "Google Insights", "Dual-store release"],
     shots: [
       { src: "/images/projects/remedo/1.jpg", label: "Practice dashboard" },
-      { src: "/images/projects/remedo/2.jpg", label: "Appointments" },
-      { src: "/images/projects/remedo/3.jpg", label: "Video consult" },
-      { src: "/images/projects/remedo/4.jpg", label: "Patient chat" },
+      { src: "/images/projects/remedo/2.jpg", label: "Google Insights" },
+      { src: "/images/projects/remedo/3.jpg", label: "Appointments" },
+      { src: "/images/projects/remedo/4.jpg", label: "Patient profiles" },
     ],
     links: {
       android:
@@ -178,22 +178,22 @@ export const projects = [
     id: "03",
     slug: "safer-walking",
     title: "SaferWalking",
-    stack: ["React Native", "Maps", "Location", "Push Notifications"],
-    domain: "Safety · Consumer",
+    stack: ["React Native", "Maps", "Location", "Push", "Device pairing"],
+    domain: "Safety · Consumer IoT",
     platforms: "iOS + Android",
     role: "React Native Developer",
     summary:
-      "Walking safety app with live location awareness and on-the-go protection flows.",
+      "Safety companion app — live location, SOS calling, multi-device management, and event alerts.",
     challenge:
       "Make live location and emergency-adjacent alerts feel instant — and still clear store review.",
     approach:
-      "Shipped map UX, location-aware walks, and push-driven alerts focused on reliability under real network conditions.",
-    metrics: ["Realtime location UX", "Push alert flows", "App Store & Play"],
+      "Shipped map UX, device pairing flows, SOS/call actions, and push-driven event logs under real network conditions.",
+    metrics: ["Realtime location UX", "SOS & device flows", "App Store & Play"],
     shots: [
       { src: "/images/projects/safer-walking/1.jpg", label: "SOS & live map" },
-      { src: "/images/projects/safer-walking/2.jpg", label: "Walk tracking" },
-      { src: "/images/projects/safer-walking/3.jpg", label: "Zones & alerts" },
-      { src: "/images/projects/safer-walking/4.jpg", label: "Safety history" },
+      { src: "/images/projects/safer-walking/2.jpg", label: "Multi-device select" },
+      { src: "/images/projects/safer-walking/3.jpg", label: "Events & alerts" },
+      { src: "/images/projects/safer-walking/4.jpg", label: "Device connect" },
     ],
     links: {
       android:
@@ -433,6 +433,104 @@ export const caseStudies = {
       "~25% subscription conversion lift tied to mobile delivery work",
       "HealthKit / Fitbit sync paths shipping in production",
       "Sentry-backed visibility for crash and release quality",
+    ],
+  },
+  remedo: {
+    headline:
+      "Doctor-facing mobile workflows for consults, appointments, and practice growth.",
+    problem:
+      "Doctors needed a phone-first way to run the day — confirm visits, run video/clinic consults, see Google presence, and open patient context — without bouncing between clunky web tools.",
+    challenges: [
+      {
+        title: "Appointment states doctors can trust",
+        problem:
+          "Tentative, unpaid, canceled, and video vs clinic visits get messy fast. Wrong status = missed consults and angry patients.",
+        solution:
+          "Built appointment lists with clear status, payment cues, countdowns, and actions (confirm, request payment, mark complete) for audio/video/clinic flows.",
+      },
+      {
+        title: "Video + clinic parity in one mobile surface",
+        problem:
+          "Doctors switch between teleconsult and in-clinic visits. Separate apps or buried web flows kill adoption.",
+        solution:
+          "Unified upcoming/previous appointment UX so video and clinic consults live in the same trusted queue doctors already use.",
+      },
+      {
+        title: "Practice growth signals, not vanity dashboards",
+        problem:
+          "Google profile insights only help if doctors can see search, views, leads, and actions without leaving the app.",
+        solution:
+          "Shipped Insights for Google presence (search, views, leads, chatbot replies, directions, calls) and wired Mixpanel/WebEngage so product could see where doctors dropped off.",
+      },
+    ],
+    timeline: [
+      {
+        phase: "Discovery",
+        body: "Mapped doctor day-one jobs: confirm appointments, start consults, open patient profiles, and understand Google-driven demand.",
+      },
+      {
+        phase: "Build",
+        body: "Delivered dashboard, appointments, patient profiles, Insights, and analytics instrumentation on a shared React Native codebase.",
+      },
+      {
+        phase: "Launch / iterate",
+        body: "Kept dual-store releases moving while consult and engagement funnels improved against real clinic usage.",
+      },
+    ],
+    outcomes: [
+      "Video + clinic appointment flows live on both stores",
+      "Google Insights surface for practice visibility",
+      "Patient profile + care-plan context on mobile",
+      "Mixpanel / WebEngage funnels for engagement drop-off",
+    ],
+  },
+  "safer-walking": {
+    headline:
+      "Safety companion app where location, SOS, and device alerts have to feel instant.",
+    problem:
+      "Families and caregivers need to see where someone is, respond to SOS, manage paired devices, and review alerts — under flaky networks and store-review scrutiny for location/emergency-adjacent UX.",
+    challenges: [
+      {
+        title: "Live map + SOS that reads clearly under stress",
+        problem:
+          "Emergency-adjacent UI fails if the map is noisy or the call action is hard to hit.",
+        solution:
+          "Shipped a focused tracking map with SOS markers, battery/context cards, and a clear two-way call action for critical moments.",
+      },
+      {
+        title: "Multi-device mental model",
+        problem:
+          "One account often watches multiple people/devices. A flat single-user map confuses caregivers.",
+        solution:
+          "Built device select/list flows so users can switch between tracked devices and jump into the right last-known location context.",
+      },
+      {
+        title: "Events caregivers actually review",
+        problem:
+          "Push noise without a readable log makes people disable notifications — then miss the alert that mattered.",
+        solution:
+          "Delivered an events feed for calls and zone/location alerts, plus pairing/connect UX for the Safer Walking device path.",
+      },
+    ],
+    timeline: [
+      {
+        phase: "Discovery",
+        body: "Defined safety-critical flows: track, SOS/call, device pairing, and alert history — plus App Store constraints around location messaging.",
+      },
+      {
+        phase: "Build",
+        body: "Implemented maps, device management, SOS/call actions, events, and push-driven updates with reliability under real network conditions.",
+      },
+      {
+        phase: "Launch",
+        body: "Shipped to App Store and Play Store with production location UX and clear caregiver-facing alert surfaces.",
+      },
+    ],
+    outcomes: [
+      "Realtime location + SOS map UX in production",
+      "Multi-device select and connect flows shipped",
+      "Events log for calls, zones, and alerts",
+      "Live dual-store release for a safety/IoT product",
     ],
   },
 } as const;

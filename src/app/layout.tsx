@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     url: "https://vishaljoshi.vercel.app",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Vishal Joshi — Senior Mobile Engineer",
     description:
       "React Native & Flutter engineer. Production apps for startups and agencies.",

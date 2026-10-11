@@ -11,6 +11,7 @@ import {
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { ClientChrome } from "@/components/client-chrome";
+import { StickyCta } from "@/components/sticky-cta";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -40,12 +41,16 @@ export default async function CaseStudyPage({ params }: Props) {
   if (!project) notFound();
 
   const deep = getCaseStudy(slug);
+  const index = projects.findIndex((p) => p.slug === slug);
+  const prev = index > 0 ? projects[index - 1] : null;
+  const next =
+    index >= 0 && index < projects.length - 1 ? projects[index + 1] : null;
 
   return (
     <>
       <ClientChrome />
       <Nav />
-      <main id="main" className="flex-1">
+      <main id="main" className="flex-1 pb-20 lg:pb-0">
         <article className="section-pad border-b border-line pb-16 pt-28 sm:pb-24 sm:pt-32">
           <div className="mx-auto max-w-7xl">
             <Link
@@ -248,7 +253,32 @@ export default async function CaseStudyPage({ params }: Props) {
           </>
         ) : null}
 
-        <section className="section-pad py-16 sm:py-20">
+        <section className="section-pad border-b border-line py-10">
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4">
+            {prev ? (
+              <Link
+                href={`/work/${prev.slug}`}
+                className="font-mono text-xs text-muted transition hover:text-accent"
+              >
+                ← {prev.title}
+              </Link>
+            ) : (
+              <span />
+            )}
+            {next ? (
+              <Link
+                href={`/work/${next.slug}`}
+                className="font-mono text-xs text-muted transition hover:text-accent"
+              >
+                {next.title} →
+              </Link>
+            ) : (
+              <span />
+            )}
+          </div>
+        </section>
+
+        <section id="contact" className="section-pad py-16 sm:py-20">
           <div className="mx-auto max-w-7xl">
             <h2 className="text-2xl font-semibold tracking-tight text-fg sm:text-3xl">
               Want results like this?
@@ -277,6 +307,7 @@ export default async function CaseStudyPage({ params }: Props) {
         </section>
       </main>
       <Footer />
+      <StickyCta />
     </>
   );
 }

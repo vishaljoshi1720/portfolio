@@ -11,13 +11,14 @@ import { Faq } from "@/components/faq";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { ClientChrome } from "@/components/client-chrome";
+import { StickyCta } from "@/components/sticky-cta";
 
 export default function Home() {
   return (
     <>
       <ClientChrome />
       <Nav />
-      <main id="main" className="flex-1">
+      <main id="main" className="flex-1 pb-20 lg:pb-0">
         <Hero />
         <Marquee />
         <About />
@@ -30,6 +31,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <StickyCta />
     </>
   );
 }
