@@ -2,6 +2,7 @@
 
 import { projects } from "@/data/site";
 import { Reveal, SectionHeader } from "@/components/reveal";
+import { trackEvent } from "@/lib/track";
 
 export function Work() {
   return (
@@ -52,6 +53,12 @@ export function Work() {
                       href={project.links.ios}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() =>
+                        trackEvent("store_click", {
+                          project: project.title,
+                          store: "ios",
+                        })
+                      }
                       className="inline-flex min-h-11 items-center justify-center border border-line-strong px-3 py-2.5 font-mono text-[11px] uppercase tracking-[0.12em] text-fg transition hover:border-accent hover:text-accent"
                     >
                       App Store ↗
@@ -60,6 +67,12 @@ export function Work() {
                       href={project.links.android}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() =>
+                        trackEvent("store_click", {
+                          project: project.title,
+                          store: "android",
+                        })
+                      }
                       className="inline-flex min-h-11 items-center justify-center border border-line-strong px-3 py-2.5 font-mono text-[11px] uppercase tracking-[0.12em] text-fg transition hover:border-accent hover:text-accent"
                     >
                       Play Store ↗

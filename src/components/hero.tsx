@@ -3,14 +3,10 @@
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { site } from "@/data/site";
+import { HeroEngage } from "@/components/hero-engage";
+import { trackEvent } from "@/lib/track";
 
 const ease = [0.22, 1, 0.36, 1] as const;
-
-const fitPoints = [
-  "Own React Native or Flutter end-to-end",
-  "Fix crashes, perf, and release pain",
-  "Ship payments, wallets, or realtime",
-];
 
 const domains = ["Health", "Fintech", "Hospitality", "Delivery", "E‑commerce"];
 
@@ -77,7 +73,7 @@ export function Hero() {
 
       <motion.div
         style={{ y: contentY }}
-        className="section-pad relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-center gap-10 pb-16 pt-28 sm:gap-12 sm:pb-20 md:pt-32 lg:grid lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-14 lg:pb-24"
+        className="section-pad relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-center gap-10 pb-16 pt-28 sm:gap-12 sm:pb-20 md:pt-32 lg:grid lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-12 lg:pb-24 xl:gap-16"
       >
         <div className="max-w-2xl">
           <motion.p
@@ -100,8 +96,8 @@ export function Hero() {
             transition={{ duration: 0.5, ease, delay: reduce ? 0 : 0.35 }}
             className="mt-5 max-w-xl text-pretty text-lg leading-snug text-fg/90 sm:mt-7 sm:text-xl md:text-[1.55rem]"
           >
-            I help startups and agencies ship mobile products users trust —
-            and teams can maintain.
+            Hire a senior mobile engineer who ships production React Native &
+            Flutter apps — not just demos.
           </motion.p>
 
           <motion.p
@@ -110,8 +106,8 @@ export function Hero() {
             transition={{ duration: 0.45, ease, delay: reduce ? 0 : 0.45 }}
             className="mt-4 max-w-lg text-[15px] leading-relaxed text-muted sm:mt-5 sm:text-base"
           >
-            Senior React Native & Flutter engineer. 5+ years, 15+ production
-            apps across health, fintech, hospitality, and delivery.
+            5+ years. 15+ store apps. Health, fintech, hospitality, delivery —
+            for startups, agencies, and remote US/EU teams.
           </motion.p>
 
           <motion.div
@@ -122,15 +118,21 @@ export function Hero() {
           >
             <a
               href={`mailto:${site.email}?subject=Freelance%20mobile%20project`}
+              onClick={() =>
+                trackEvent("cta_hire", { location: "hero_primary", type: "email" })
+              }
               className="btn-primary inline-flex min-h-12 items-center justify-center bg-accent px-6 py-3.5 text-center font-mono text-sm font-medium text-accent-ink transition hover:brightness-110"
             >
-              Talk about a project
+              Hire me for a project
             </a>
             <a
               href="#work"
+              onClick={() =>
+                trackEvent("cta_work", { location: "hero_primary" })
+              }
               className="inline-flex min-h-12 items-center justify-center border border-line-strong px-6 py-3.5 text-center font-mono text-sm text-fg transition hover:border-accent hover:text-accent"
             >
-              See selected work
+              See live apps
             </a>
           </motion.div>
 
@@ -149,39 +151,7 @@ export function Hero() {
           </motion.ul>
         </div>
 
-        <motion.aside
-          initial={reduce ? false : { opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, ease, delay: reduce ? 0 : 0.3 }}
-          className="w-full max-w-md border border-line-strong bg-bg-panel/90 p-5 sm:p-6 md:p-7 lg:justify-self-end"
-        >
-          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent">
-            Good fit if you need
-          </p>
-          <ul className="mt-4 space-y-3.5 sm:mt-5 sm:space-y-4">
-            {fitPoints.map((point, i) => (
-              <li key={point} className="flex gap-3">
-                <span className="mt-0.5 shrink-0 font-mono text-xs text-dim">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="text-[15px] leading-snug text-fg/90">{point}</span>
-              </li>
-            ))}
-          </ul>
-
-          <dl className="mt-6 grid grid-cols-3 gap-2 border-t border-line pt-5 sm:mt-7 sm:gap-3 sm:pt-6">
-            {site.stats.slice(0, 3).map((stat) => (
-              <div key={stat.label} className="min-w-0">
-                <dt className="truncate font-mono text-[9px] uppercase tracking-[0.1em] text-muted sm:text-[10px]">
-                  {stat.label}
-                </dt>
-                <dd className="mt-1 font-mono text-lg font-semibold text-accent sm:text-xl">
-                  {stat.value}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </motion.aside>
+        <HeroEngage />
       </motion.div>
     </section>
   );

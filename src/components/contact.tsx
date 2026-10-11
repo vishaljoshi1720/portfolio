@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { site } from "@/data/site";
 import { Reveal, SectionHeader } from "@/components/reveal";
+import { trackEvent } from "@/lib/track";
 
 export function Contact() {
   return (
@@ -29,10 +30,12 @@ export function Contact() {
               </p>
               <motion.a
                 href={`mailto:${site.email}?subject=Freelance%20mobile%20project`}
-                data-cursor-label="mail"
+                onClick={() =>
+                  trackEvent("cta_hire", { location: "contact", type: "email" })
+                }
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="btn-primary mt-9 inline-flex items-center bg-accent px-6 py-3.5 font-mono text-sm font-medium text-accent-ink"
+                className="btn-primary mt-9 inline-flex min-h-12 items-center bg-accent px-6 py-3.5 font-mono text-sm font-medium text-accent-ink"
               >
                 {site.email}
               </motion.a>
@@ -56,8 +59,13 @@ export function Contact() {
                       href={row.href}
                       target={row.external ? "_blank" : undefined}
                       rel={row.external ? "noopener noreferrer" : undefined}
-                      data-cursor-label="go"
-                      className="group flex items-center justify-between gap-4 border-b border-line py-3.5 transition-colors hover:text-accent"
+                      onClick={() =>
+                        trackEvent("cta_channel", {
+                          location: "contact",
+                          channel: row.label,
+                        })
+                      }
+                      className="group flex min-h-12 items-center justify-between gap-4 border-b border-line py-3.5 transition-colors hover:text-accent"
                     >
                       <span>{row.label}</span>
                       <span className="translate-x-0 transition-transform group-hover:translate-x-1">
