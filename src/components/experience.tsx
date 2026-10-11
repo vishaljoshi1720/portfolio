@@ -11,7 +11,7 @@ export function Experience() {
     >
       <div className="mx-auto max-w-7xl">
         <SectionHeader
-          index="// 02 · experience"
+          index="// 03 · experience"
           title="Where the craft was sharpened."
         />
 

@@ -3,9 +3,11 @@ import { Hero } from "@/components/hero";
 import { Marquee } from "@/components/marquee";
 import { About } from "@/components/about";
 import { Work } from "@/components/work";
+import { Engage } from "@/components/engage";
 import { Experience } from "@/components/experience";
 import { Stack } from "@/components/stack";
 import { Testimonials } from "@/components/testimonials";
+import { Faq } from "@/components/faq";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { ClientChrome } from "@/components/client-chrome";
@@ -20,9 +22,11 @@ export default function Home() {
         <Marquee />
         <About />
         <Work />
+        <Engage />
         <Experience />
         <Stack />
         <Testimonials />
+        <Faq />
         <Contact />
       </main>
       <Footer />

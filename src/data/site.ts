@@ -50,7 +50,22 @@ export const site = {
     { label: "yrs shipping", value: "5+" },
     { label: "prod apps", value: "15+" },
     { label: "crash-free", value: "99.5%" },
-    { label: "domains", value: "4+" },
+    { label: "conversion lift", value: "~25%" },
+  ],
+  /** Above-the-fold proof chips (Pushkar-style) */
+  proof: [
+    "5+ years shipping",
+    "15+ store apps",
+    "99.5% crash-free",
+    "~25% sub conversion lift",
+  ],
+  companies: [
+    "Publicis Sapient",
+    "Nimblechapps",
+    "Code Symphony",
+    "The Fitness Chef",
+    "Remedo",
+    "SaferWalking",
   ],
   services: [
     "React Native (New Architecture)",
@@ -103,20 +118,28 @@ export const projects = [
     slug: "fitness-chef",
     title: "The Fitness Chef",
     stack: ["React Native", "Stripe", "RevenueCat", "HealthKit", "Fitbit"],
-    domain: "Health",
+    domain: "Health · Consumer",
+    platforms: "iOS + Android",
     role: "Senior React Native Developer",
-    challenge:
-      "Ship a subscription fitness product that syncs health data reliably and converts free users into paying subscribers without tanking store ratings.",
-    approach:
-      "Owned mobile delivery for nutrition/workout plans, HealthKit & Fitbit sync, Stripe + RevenueCat entitlements, and production monitoring with Sentry.",
     summary:
-      "Subscription nutrition & workout plans with fitness API sync and progress tracking for a large active user base.",
-    outcome: "50K+ active users · ~25% subscription conversion lift · live on App Store & Play",
-    screenshots: [
-      "/images/projects/fitness-chef/1.jpg",
-      "/images/projects/fitness-chef/2.jpg",
-      "/images/projects/fitness-chef/3.jpg",
-      "/images/projects/fitness-chef/4.jpg",
+      "Subscription nutrition & workout app with health-data sync and progress tracking.",
+    challenge:
+      "Convert free users into subscribers while keeping HealthKit/Fitbit sync reliable and store ratings intact.",
+    approach:
+      "Owned mobile delivery — plans, entitlements (Stripe + RevenueCat), fitness API sync, and Sentry monitoring.",
+    metrics: [
+      "50K+ active users",
+      "~25% conversion lift",
+      "Live on both stores",
+    ],
+    shots: [
+      {
+        src: "/images/projects/fitness-chef/1.jpg",
+        label: "Calories & macros",
+      },
+      { src: "/images/projects/fitness-chef/2.jpg", label: "Workout tracking" },
+      { src: "/images/projects/fitness-chef/3.jpg", label: "Meal planning" },
+      { src: "/images/projects/fitness-chef/4.jpg", label: "Progress & sync" },
     ],
     links: {
       android:
@@ -129,20 +152,21 @@ export const projects = [
     slug: "remedo",
     title: "Remedo Doctor",
     stack: ["React Native", "Video", "Mixpanel", "WebEngage"],
-    domain: "Healthcare",
+    domain: "Healthcare · B2B",
+    platforms: "iOS + Android",
     role: "React Native Developer",
-    challenge:
-      "Give doctors a stable mobile workflow for availability, appointments, and chat/video consults — with engagement analytics that actually get used.",
-    approach:
-      "Built consult and scheduling flows, video sessions, and Mixpanel/WebEngage funnels so product could see where doctors dropped off.",
     summary:
-      "Doctor platform for availability, appointments, and chat/video consults with analytics-driven engagement.",
-    outcome: "Video consults in production · analytics-driven engagement · live on both stores",
-    screenshots: [
-      "/images/projects/remedo/1.jpg",
-      "/images/projects/remedo/2.jpg",
-      "/images/projects/remedo/3.jpg",
-      "/images/projects/remedo/4.jpg",
+      "Doctor platform for availability, appointments, and chat/video consults.",
+    challenge:
+      "Give doctors a stable mobile workflow for consults — with engagement analytics teams actually use.",
+    approach:
+      "Built scheduling, video sessions, and Mixpanel/WebEngage funnels to surface drop-off in the consult flow.",
+    metrics: ["Video consults live", "Analytics funnels", "Dual-store release"],
+    shots: [
+      { src: "/images/projects/remedo/1.jpg", label: "Practice dashboard" },
+      { src: "/images/projects/remedo/2.jpg", label: "Appointments" },
+      { src: "/images/projects/remedo/3.jpg", label: "Video consult" },
+      { src: "/images/projects/remedo/4.jpg", label: "Patient chat" },
     ],
     links: {
       android:
@@ -155,51 +179,26 @@ export const projects = [
     slug: "safer-walking",
     title: "SaferWalking",
     stack: ["React Native", "Maps", "Location", "Push Notifications"],
-    domain: "Safety",
+    domain: "Safety · Consumer",
+    platforms: "iOS + Android",
     role: "React Native Developer",
-    challenge:
-      "Deliver a cross-platform safety app where live location and alerts have to feel instant — and still pass store review.",
-    approach:
-      "Implemented location-aware walks, map UX, and push-driven alerts with a focus on reliability and clear emergency-adjacent flows.",
     summary:
-      "Cross-platform walking safety app with live location awareness and practical on-the-go protection flows for everyday users.",
-    outcome: "Shipped to App Store & Play Store · realtime location UX in production",
-    screenshots: [
-      "/images/projects/safer-walking/1.jpg",
-      "/images/projects/safer-walking/2.jpg",
-      "/images/projects/safer-walking/3.jpg",
-      "/images/projects/safer-walking/4.jpg",
+      "Walking safety app with live location awareness and on-the-go protection flows.",
+    challenge:
+      "Make live location and emergency-adjacent alerts feel instant — and still clear store review.",
+    approach:
+      "Shipped map UX, location-aware walks, and push-driven alerts focused on reliability under real network conditions.",
+    metrics: ["Realtime location UX", "Push alert flows", "App Store & Play"],
+    shots: [
+      { src: "/images/projects/safer-walking/1.jpg", label: "SOS & live map" },
+      { src: "/images/projects/safer-walking/2.jpg", label: "Walk tracking" },
+      { src: "/images/projects/safer-walking/3.jpg", label: "Zones & alerts" },
+      { src: "/images/projects/safer-walking/4.jpg", label: "Safety history" },
     ],
     links: {
       android:
         "https://play.google.com/store/apps/details?id=com.saferwalkingmobile",
       ios: "https://apps.apple.com/no/app/safer-walking-2/id1637427844",
-    },
-  },
-  {
-    id: "04",
-    slug: "deardoc",
-    title: "DearDoc",
-    stack: ["React Native", "Video", "Appointments", "Analytics"],
-    domain: "Healthcare",
-    role: "React Native Developer",
-    challenge:
-      "Help doctors run day-to-day practice from mobile — appointments and consults — without a clunky clinic-only web tool.",
-    approach:
-      "Delivered doctor-facing appointment and consultation flows on a shared React Native codebase for iOS and Android.",
-    summary:
-      "Doctor-facing app for managing practice workflows, appointments, and patient consultations on iOS and Android.",
-    outcome: "Live practice workflows on App Store & Play Store",
-    screenshots: [
-      "/images/projects/deardoc/1.jpg",
-      "/images/projects/deardoc/2.jpg",
-      "/images/projects/deardoc/3.jpg",
-      "/images/projects/deardoc/4.jpg",
-    ],
-    links: {
-      android:
-        "https://play.google.com/store/apps/details?id=com.deardoc.doctor&hl=en_IN&gl=US",
-      ios: "https://apps.apple.com/in/app/deardoc/id1517629173",
     },
   },
 ] as const;
@@ -240,10 +239,32 @@ export const experience = [
 ] as const;
 
 export const skills = {
-  platforms: ["React Native (JSI / TurboModules / Fabric / Hermes)", "Flutter", "Expo", "iOS & Android native bridges"],
-  craft: ["Reanimated & Gesture Handler", "Clean Architecture / MVVM", "Modular monorepo", "Component-driven UI"],
-  data: ["TypeScript", "Zustand / Redux Toolkit", "TanStack Query", "GraphQL / REST", "WebSockets"],
-  ship: ["Stripe / Razorpay / RevenueCat", "Firebase suite", "Sentry", "Fastlane / GitHub Actions", "Jest / Detox"],
+  platforms: [
+    "React Native (JSI / TurboModules / Fabric / Hermes)",
+    "Flutter",
+    "Expo",
+    "iOS & Android native bridges",
+  ],
+  craft: [
+    "Reanimated & Gesture Handler",
+    "Clean Architecture / MVVM",
+    "Modular monorepo",
+    "Component-driven UI",
+  ],
+  data: [
+    "TypeScript",
+    "Zustand / Redux Toolkit",
+    "TanStack Query",
+    "GraphQL / REST",
+    "WebSockets",
+  ],
+  ship: [
+    "Stripe / Razorpay / RevenueCat",
+    "Firebase suite",
+    "Sentry",
+    "Fastlane / GitHub Actions",
+    "Jest / Detox",
+  ],
 } as const;
 
 export const testimonials = [
@@ -251,24 +272,180 @@ export const testimonials = [
     quote:
       "Vishal owned our React Native stack end-to-end. Payments, crash rates, and release cadence all moved in the right direction within one quarter.",
     name: "Raman Vats",
-    title: "Skdoosh Owner",
+    title: "Founder, Skdoosh",
+    region: "India",
+    source: "Direct collaborator",
   },
   {
     quote:
       "Rare mix of architecture taste and shipping speed. Our monorepo stopped being a tax and became an advantage for the mobile team.",
-    name: "Siddh Saha",
+    name: "Siddh Shah",
     title: "Tech Consultant",
+    region: "India",
+    source: "Engineering collaborator",
   },
   {
     quote:
       "He treats App Store quality as a first-class feature. Reviews climbed and support tickets dropped after his performance pass.",
     name: "Saugat Dutta",
-    title: "Skdoosh Owner",
+    title: "Founder, Skdoosh",
+    region: "India",
+    source: "Direct collaborator",
   },
   {
     quote:
       "Clear communication across time zones, strong PR discipline, and zero drama on launch week. Exactly what a remote senior should look like.",
     name: "Kalrav Vaidya",
     title: "Project Manager",
+    region: "Remote",
+    source: "Delivery partner",
   },
 ] as const;
+
+/** What clients buy — packages without public prices */
+export const engagements = [
+  {
+    id: "01",
+    name: "15-min intro",
+    duration: "Free",
+    detail:
+      "Fit check — goals, timeline, stack, and whether I’m the right senior hire.",
+  },
+  {
+    id: "02",
+    name: "Mobile audit",
+    duration: "3–5 days",
+    detail:
+      "Crash, performance, and release review with a prioritized fix plan your team can execute.",
+  },
+  {
+    id: "03",
+    name: "Feature sprint",
+    duration: "2–4 weeks",
+    detail:
+      "Owned delivery of a scoped feature or module — architecture, build, QA, store-ready.",
+  },
+  {
+    id: "04",
+    name: "Fractional lead",
+    duration: "Monthly",
+    detail:
+      "Part-time senior ownership — reviews, shipping cadence, unblocking, release discipline.",
+  },
+] as const;
+
+export const process = [
+  {
+    step: "01",
+    title: "Discovery",
+    body: "Scope, risks, store constraints, and a clear definition of done.",
+  },
+  {
+    step: "02",
+    title: "Build",
+    body: "Weekly demos, tight PRs, Crashlytics/Sentry from day one.",
+  },
+  {
+    step: "03",
+    title: "Ship",
+    body: "TestFlight / internal tracks, store assets, review fixes, dual-store release.",
+  },
+  {
+    step: "04",
+    title: "Handoff",
+    body: "Docs, runbooks, and a team that can keep shipping without me.",
+  },
+] as const;
+
+export const faq = [
+  {
+    q: "Are you available for freelance or contract React Native work?",
+    a: "Yes. I take remote freelance and contract engagements — audits, feature sprints, performance work, payments/subscriptions, and end-to-end app launches. Book a free 15-minute intro or WhatsApp me with a short brief.",
+  },
+  {
+    q: "Do you work with international clients across time zones?",
+    a: "Yes — USA, UK, EU, UAE/GCC, Singapore, Australia, Canada, and India. I’m async-friendly with clear updates, and I overlap IST mornings with Europe/UAE and evenings with US East when needed.",
+  },
+  {
+    q: "React Native, Flutter, or Expo?",
+    a: "Most production work is React Native (including New Architecture paths) and Flutter. Expo (managed or bare + EAS) is a strong fit for MVPs and teams that want fast store pipelines. I’ll recommend the stack that matches your timeline and native needs — not the one that looks trendy.",
+  },
+  {
+    q: "What kinds of engagements do you take?",
+    a: "Four common ones: free intro call, mobile audit (3–5 days), feature sprint (2–4 weeks), and fractional mobile lead (monthly). Project quotes after we understand scope — no public price list.",
+  },
+  {
+    q: "Have you shipped apps to the App Store and Google Play?",
+    a: "Yes — 15+ production apps across health, fintech, hospitality, delivery, and safety. Recent live examples include The Fitness Chef, Remedo Doctor, and SaferWalking (links on this site).",
+  },
+  {
+    q: "How fast can you start?",
+    a: "Short audits and well-scoped sprints usually start within 1–2 weeks. Larger builds depend on current commitments — send a brief and I’ll reply with availability and a clear next step.",
+  },
+] as const;
+
+/** Deep case-study copy (homepage stays short; /work/[slug] goes deep) */
+export const caseStudies = {
+  "fitness-chef": {
+    headline:
+      "Subscription fitness app that converts free users — without tanking store ratings.",
+    problem:
+      "The product needed reliable health-data sync and a subscription path that felt fair to users. Missed entitlements, flaky HealthKit/Fitbit sync, or a rough paywall would show up immediately in reviews and churn.",
+    challenges: [
+      {
+        title: "Entitlements that stay honest across stores",
+        problem:
+          "Stripe + store billing edge cases create “I paid but I’m locked out” support tickets — and one-star reviews.",
+        solution:
+          "Owned RevenueCat/Stripe entitlement flows, restore-purchase paths, and monitoring so access matched payment state in production.",
+      },
+      {
+        title: "Health data sync users can trust",
+        problem:
+          "Calories, workouts, and wearables only matter if numbers feel consistent day to day.",
+        solution:
+          "Stabilized HealthKit & Fitbit sync paths and progressive tracking UX so the app felt dependable under real device conditions.",
+      },
+      {
+        title: "Ship quality at subscriber scale",
+        problem:
+          "Conversion work is worthless if crashes and release regressions burn trust.",
+        solution:
+          "Production monitoring with Sentry, careful release discipline, and mobile delivery ownership through store updates.",
+      },
+    ],
+    timeline: [
+      {
+        phase: "Discovery",
+        body: "Mapped subscription + sync risks, store constraints, and the metrics that mattered (activation → paywall → retained sub).",
+      },
+      {
+        phase: "Build",
+        body: "Delivered plans, entitlements, fitness API sync, and instrumentation iteratively with production-safe releases.",
+      },
+      {
+        phase: "Launch / iterate",
+        body: "Kept dual-store releases healthy while conversion and sync improvements landed against a live user base.",
+      },
+    ],
+    outcomes: [
+      "50K+ active users on a live dual-store product",
+      "~25% subscription conversion lift tied to mobile delivery work",
+      "HealthKit / Fitbit sync paths shipping in production",
+      "Sentry-backed visibility for crash and release quality",
+    ],
+  },
+} as const;
+
+export type ProjectSlug = (typeof projects)[number]["slug"];
+
+export function getProject(slug: string) {
+  return projects.find((p) => p.slug === slug);
+}
+
+export function getCaseStudy(slug: string) {
+  if (slug in caseStudies) {
+    return caseStudies[slug as keyof typeof caseStudies];
+  }
+  return null;
+}

@@ -6,11 +6,11 @@ import { site } from "@/data/site";
 import { Avatar } from "@/components/avatar";
 
 const links = [
-  { href: "#work", label: "work" },
-  { href: "#experience", label: "experience" },
-  { href: "#stack", label: "stack" },
-  { href: "#notes", label: "notes" },
-  { href: "#contact", label: "contact" },
+  { href: "/#work", label: "work" },
+  { href: "/#engage", label: "engage" },
+  { href: "/#faq", label: "faq" },
+  { href: "/#notes", label: "notes" },
+  { href: "/#contact", label: "contact" },
 ];
 
 export function Nav() {
@@ -58,7 +58,7 @@ export function Nav() {
     >
       <div className="section-pad flex items-center justify-between gap-3 py-3 sm:py-4 lg:py-5">
         <a
-          href="#top"
+          href="/#top"
           className="flex min-h-11 items-center gap-2.5 font-mono text-sm tracking-tight text-fg transition-colors hover:text-accent"
         >
           <Avatar size={28} />
@@ -139,7 +139,7 @@ export function Nav() {
                 </motion.a>
               ))}
               <a
-                href="#contact"
+                href="/#contact"
                 onClick={() => setOpen(false)}
                 className="mt-3 min-h-12 bg-accent py-3 text-center font-mono text-sm text-accent-ink"
               >

@@ -55,6 +55,17 @@ export function About() {
             <p className="mt-6 max-w-2xl font-mono text-sm leading-7 text-muted sm:mt-7">
               {site.about.body}
             </p>
+            <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.16em] text-dim">
+              Teams & products
+            </p>
+            <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2 font-mono text-xs text-muted">
+              {site.companies.map((name) => (
+                <li key={name} className="flex items-center gap-2">
+                  <span className="size-1 shrink-0 bg-accent/70" />
+                  {name}
+                </li>
+              ))}
+            </ul>
           </Reveal>
           <Reveal delay={0.08}>
             <ul className="grid grid-cols-2 gap-px border border-line bg-line">

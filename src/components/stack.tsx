@@ -15,7 +15,7 @@ export function Stack() {
     <section id="stack" className="section-pad border-t border-line py-16 sm:py-24 md:py-32">
       <div className="mx-auto max-w-7xl">
         <SectionHeader
-          index="// 03 · stack"
+          index="// 04 · stack"
           title="Tools that survive production."
           hint="What I reach for when the app has to stay live."
         />

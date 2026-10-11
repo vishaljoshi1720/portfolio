@@ -50,7 +50,7 @@ export function Contact() {
       />
       <div className="relative mx-auto max-w-7xl">
         <SectionHeader
-          index="// 05 · contact"
+          index="// 07 · contact"
           title="Need a senior mobile engineer?"
           hint={site.marketLine}
         />

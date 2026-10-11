@@ -11,15 +11,23 @@ export function Testimonials() {
     >
       <div className="mx-auto max-w-7xl">
         <SectionHeader
-          index="// 04 · client_notes"
+          index="// 05 · client_notes"
           title="What collaborators say."
-          hint="Placeholders — replace with real quotes when you have them."
+          hint="From people I've shipped with — region + relationship tagged."
         />
         <div className="grid gap-px border border-line bg-line md:grid-cols-2">
           {testimonials.map((item, i) => (
             <Reveal key={item.name} delay={i * 0.04}>
               <figure className="flex h-full flex-col bg-bg p-7 md:p-9">
-                <blockquote className="flex-1 text-lg leading-relaxed text-fg/90">
+                <div className="flex flex-wrap gap-2">
+                  <span className="border border-line px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
+                    {item.region}
+                  </span>
+                  <span className="border border-line px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.12em] text-dim">
+                    {item.source}
+                  </span>
+                </div>
+                <blockquote className="mt-5 flex-1 text-lg leading-relaxed text-fg/90">
                   “{item.quote}”
                 </blockquote>
                 <figcaption className="mt-8 border-t border-line pt-5">

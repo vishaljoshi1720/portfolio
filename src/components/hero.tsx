@@ -106,9 +106,25 @@ export function Hero() {
             transition={{ duration: 0.45, ease, delay: reduce ? 0 : 0.45 }}
             className="mt-4 max-w-lg text-[15px] leading-relaxed text-muted sm:mt-5 sm:text-base"
           >
-            5+ years. 15+ store apps. Health, fintech, hospitality, delivery —
-            for startups & agencies in the USA, UK, EU, UAE, and beyond.
+            Health, fintech, hospitality, delivery — for startups & agencies in
+            the USA, UK, EU, UAE, and beyond.
           </motion.p>
+
+          <motion.ul
+            initial={reduce ? false : { opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease, delay: reduce ? 0 : 0.5 }}
+            className="mt-5 flex flex-wrap gap-2"
+          >
+            {site.proof.map((item) => (
+              <li
+                key={item}
+                className="border border-accent/30 bg-accent/5 px-2.5 py-1.5 font-mono text-[11px] tracking-wide text-accent"
+              >
+                {item}
+              </li>
+            ))}
+          </motion.ul>
 
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 14 }}
