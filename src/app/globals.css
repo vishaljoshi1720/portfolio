@@ -201,7 +201,8 @@ button {
   top: calc(0.75rem + var(--safe-top));
 }
 
-body.menu-open {
+body.menu-open,
+body.boot-lock {
   overflow: hidden;
 }
 

@@ -7,24 +7,6 @@ import { trackEvent } from "@/lib/track";
 
 const channels = [
   {
-    label: "book intro",
-    href: site.links.booking,
-    external: true,
-    key: "book",
-  },
-  {
-    label: "whatsapp",
-    href: site.links.whatsapp,
-    external: true,
-    key: "whatsapp",
-  },
-  {
-    label: "email",
-    href: `mailto:${site.email}?subject=Freelance%20mobile%20project`,
-    external: false,
-    key: "email",
-  },
-  {
     label: "linkedin",
     href: site.links.linkedin,
     external: true,

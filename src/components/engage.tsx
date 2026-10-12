@@ -1,6 +1,6 @@
 "use client";
 
-import { engagements, process, site } from "@/data/site";
+import { engagements, process } from "@/data/site";
 import { Reveal, SectionHeader } from "@/components/reveal";
 import { trackEvent } from "@/lib/track";
 
@@ -59,26 +59,15 @@ export function Engage() {
           </ol>
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-2 sm:mt-12">
+        <p className="mt-10 sm:mt-12">
           <a
-            href={site.links.booking}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackEvent("cta_book", { location: "engage" })}
-            className="btn-primary inline-flex min-h-11 items-center justify-center bg-accent px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.12em] text-accent-ink transition hover:brightness-110"
+            href="#contact"
+            onClick={() => trackEvent("cta_contact", { location: "engage" })}
+            className="inline-flex min-h-11 items-center font-mono text-[11px] uppercase tracking-[0.14em] text-accent transition hover:opacity-80"
           >
-            Book intro call
+            Ready? Jump to contact →
           </a>
-          <a
-            href={site.links.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackEvent("cta_whatsapp", { location: "engage" })}
-            className="inline-flex min-h-11 items-center justify-center border border-line-strong px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.12em] text-fg transition hover:border-accent hover:text-accent"
-          >
-            WhatsApp brief
-          </a>
-        </div>
+        </p>
       </div>
     </section>
   );

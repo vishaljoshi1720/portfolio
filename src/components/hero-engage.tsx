@@ -137,42 +137,14 @@ export function HeroEngage() {
           </ol>
 
           <a
-            href={site.links.booking}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             onClick={() =>
-              trackEvent("cta_book", { location: "hero_engage" })
+              trackEvent("cta_contact", { location: "hero_engage" })
             }
-            className="btn-primary mt-7 flex min-h-12 w-full items-center justify-center bg-accent px-5 py-3.5 text-center font-mono text-sm font-medium text-accent-ink transition hover:brightness-110"
+            className="mt-7 inline-flex min-h-11 items-center font-mono text-[11px] uppercase tracking-[0.14em] text-accent transition hover:opacity-80"
           >
-            Book free intro call →
+            Contact & booking →
           </a>
-
-          <div className="mt-4 grid grid-cols-2 gap-2">
-            <a
-              href={site.links.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() =>
-                trackEvent("cta_whatsapp", { location: "hero_engage" })
-              }
-              className="inline-flex min-h-11 items-center justify-center border border-line-strong px-3 py-2.5 text-center font-mono text-[11px] uppercase tracking-[0.12em] text-fg transition hover:border-accent hover:text-accent"
-            >
-              WhatsApp
-            </a>
-            <a
-              href={`mailto:${site.email}?subject=Freelance%20mobile%20project`}
-              onClick={() =>
-                trackEvent("cta_hire", {
-                  location: "hero_engage",
-                  type: "email",
-                })
-              }
-              className="inline-flex min-h-11 items-center justify-center border border-line-strong px-3 py-2.5 text-center font-mono text-[11px] uppercase tracking-[0.12em] text-fg transition hover:border-accent hover:text-accent"
-            >
-              Email
-            </a>
-          </div>
 
           {site.showRates ? (
             <a
@@ -180,7 +152,7 @@ export function HeroEngage() {
               onClick={() =>
                 trackEvent("cta_one_pager", { location: "hero_engage" })
               }
-              className="mt-4 flex min-h-10 items-center justify-center font-mono text-[11px] text-muted transition hover:text-accent"
+              className="mt-3 flex min-h-10 items-center font-mono text-[11px] text-muted transition hover:text-accent"
             >
               Download rate card (PDF) →
             </a>

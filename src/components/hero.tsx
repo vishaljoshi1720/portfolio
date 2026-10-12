@@ -82,8 +82,15 @@ export function Hero() {
             transition={{ duration: 0.45, ease }}
             className="mb-4 font-mono text-[11px] uppercase tracking-[0.18em] text-accent sm:mb-5 sm:text-xs sm:tracking-[0.2em]"
           >
-            <span className="mr-2 inline-block size-1.5 rounded-full bg-accent align-middle shadow-[0_0_10px_var(--accent)]" />
-            Available for freelance · {site.marketLineShort}
+            <span className="flex items-start gap-2">
+              <span className="mt-1.5 inline-block size-1.5 shrink-0 rounded-full bg-accent shadow-[0_0_10px_var(--accent)]" />
+              <span className="flex min-w-0 flex-col gap-1">
+                <span>Available for freelance</span>
+                <span className="font-normal tracking-[0.14em] text-muted sm:tracking-[0.16em]">
+                  {site.marketLineShort}
+                </span>
+              </span>
+            </span>
           </motion.p>
 
           <h1 className="text-[clamp(2.5rem,9vw,6.25rem)] font-extrabold leading-[0.92] tracking-[-0.05em] text-fg">
