@@ -23,8 +23,8 @@ export function Work() {
             return (
               <li key={project.id}>
                 <Reveal delay={i * 0.03}>
-                  <article className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-20">
-                    <div className={mediaFirst ? "lg:order-2" : ""}>
+                  <article className="grid max-w-full items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-20">
+                    <div className={`min-w-0 ${mediaFirst ? "lg:order-2" : ""}`}>
                       <div className="flex flex-wrap items-center gap-2">
                         <span className="font-mono text-[11px] text-dim">
                           {project.id}
@@ -130,28 +130,26 @@ export function Work() {
                       </div>
                     </div>
 
-                    <div className={mediaFirst ? "lg:order-1" : ""}>
-                      <div className="relative overflow-hidden border border-line bg-bg-soft">
+                    <div className={`min-w-0 ${mediaFirst ? "lg:order-1" : ""}`}>
+                      <div className="relative max-w-full overflow-hidden border border-line bg-bg-soft">
                         <div
                           aria-hidden
                           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_40%,rgba(200,245,66,0.06),transparent_70%)]"
                         />
-                        <div
-                          className="relative overflow-x-auto overscroll-x-contain px-4 py-6 [scrollbar-width:none] sm:px-5 sm:py-8 md:px-6 [&::-webkit-scrollbar]:hidden"
-                          style={{ WebkitOverflowScrolling: "touch" }}
-                        >
-                          <ul className="flex w-max snap-x snap-mandatory gap-3 sm:gap-4">
+                        {/* Mobile/tablet: 2×2 grid (no page side-scroll). Desktop: snap rail. */}
+                        <div className="relative max-w-full p-4 sm:p-5 md:p-6 lg:overflow-x-auto lg:overscroll-x-contain lg:p-6 lg:[scrollbar-width:none] lg:[&::-webkit-scrollbar]:hidden">
+                          <ul className="grid grid-cols-2 gap-3 sm:gap-4 lg:flex lg:w-max lg:snap-x lg:snap-mandatory lg:gap-4">
                             {project.shots.map((shot, si) => (
                               <li
                                 key={shot.src}
-                                className="w-[132px] shrink-0 snap-center sm:w-[148px] md:w-[160px]"
+                                className="min-w-0 lg:w-[160px] lg:shrink-0 lg:snap-center xl:w-[168px]"
                               >
                                 <div className="relative aspect-[9/16] overflow-hidden border border-line-strong/60 bg-bg shadow-[0_20px_40px_-24px_rgba(0,0,0,0.85)]">
                                   <Image
                                     src={shot.src}
                                     alt={`${project.title} — ${shot.label}`}
                                     fill
-                                    sizes="(max-width: 640px) 132px, (max-width: 768px) 148px, 160px"
+                                    sizes="(max-width: 1023px) 45vw, 168px"
                                     className="object-cover"
                                     loading={i === 0 && si < 2 ? "eager" : "lazy"}
                                   />
@@ -164,7 +162,10 @@ export function Work() {
                           </ul>
                         </div>
                         <p className="border-t border-line px-4 py-2.5 font-mono text-[10px] uppercase tracking-[0.14em] text-dim sm:px-5">
-                          Swipe · App Store screenshots
+                          <span className="lg:hidden">App Store screenshots</span>
+                          <span className="hidden lg:inline">
+                            Scroll · App Store screenshots
+                          </span>
                         </p>
                       </div>
                     </div>
