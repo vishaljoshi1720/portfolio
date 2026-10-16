@@ -7,6 +7,14 @@
         "serve"
       ],
       "type": "stdio"
+    },
+    "headroom": {
+      "command": "/Users/vishaljoshi/.local/bin/headroom",
+      "args": [
+        "mcp",
+        "serve"
+      ],
+      "type": "stdio"
     }
   }
 }
